@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>WikiPacks — Collect Wikipedia Cards</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -1821,6 +1821,214 @@ header::after{
 }
 .pp-btn-primary{border-color:rgba(245,200,66,.4);color:var(--gold);}
 .pp-btn-primary:hover{background:rgba(245,200,66,.1);}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE — MOBILE FIRST
+   Breakpoints: 480px (small phone), 640px (phone), 768px (tablet)
+═══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* ── Header ── */
+  header {
+    height: 56px;
+    padding: 0 16px;
+    gap: 10px;
+  }
+  .logo { font-size: 1.2rem; }
+  .header-center { gap: 6px; }
+  .pack-counter-vals { padding: 0 8px; font-size: .78rem; }
+  .pack-counter-icon { width: 30px; height: 30px; font-size: .75rem; }
+  .user-pill { padding: 5px 10px; font-size: .6rem; }
+
+  /* ── Tabs ── */
+  .tabs {
+    top: 56px;
+    padding: 0 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    gap: 0;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    padding: 0 14px;
+    height: 40px;
+    font-size: .5rem;
+    letter-spacing: 2px;
+    gap: 5px;
+    flex-shrink: 0;
+  }
+  .tab-icon { font-size: .65rem; }
+
+  /* ── Main content ── */
+  .main { padding: 16px 14px 32px; }
+
+  /* ── Stats bar ── */
+  .stats-bar { border-radius: 12px; margin-bottom: 20px; }
+  .stat { padding: 12px 14px; min-width: 80px; }
+  .stat-lbl { font-size: .42rem; letter-spacing: 2px; }
+  .stat-val { font-size: 1rem; }
+
+  /* ── Shop packs ── */
+  .packs-row { gap: 16px; }
+  .pack-wrap { transform: scale(0.85); transform-origin: top center; }
+
+  /* ── Pity section ── */
+  .pity-section { max-width: 100%; }
+
+  /* ── Collection grid ── */
+  .cgrid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 10px;
+  }
+  .coll-toolbar { flex-direction: column; align-items: stretch; gap: 10px; }
+  .rarity-counters { gap: 6px; }
+  .rc-item { min-width: 46px; padding: 7px 4px; }
+  .rc-val { font-size: .85rem; }
+  .rc-lbl { font-size: .32rem; }
+  .coll-filters-right { flex-direction: row; align-items: center; justify-content: space-between; }
+  .grade-filters { flex-wrap: wrap; gap: 4px; margin-bottom: 0; }
+  .gf-btn { font-size: .48rem; padding: 3px 8px; }
+  .coll-count { font-size: .5rem; }
+
+  /* ── Pack opening modal ── */
+  .overlay { align-items: flex-start; padding-top: 0; }
+  .mwrap { padding: 16px 12px 24px; max-width: 100%; border-radius: 0 0 20px 20px; }
+
+  /* ── OBO reveal ── */
+  .obo-card-wrap .card { width: min(220px, 70vw) !important; }
+  .obo-stage { gap: 8px; }
+  .obo-tray { gap: 4px; }
+  .obo-tray .card { width: 44px; }
+  .next-card-btn {
+    font-size: .55rem;
+    padding: 10px 28px;
+  }
+  .mode-toggle { gap: 4px; }
+  .mode-btn { font-size: .48rem; padding: 6px 14px; }
+  .obo-progress { font-size: .55rem; }
+
+  /* ── All-at-once grid ── */
+  .all-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important;
+    gap: 8px;
+  }
+
+  /* ── Detail modal ── */
+  #dcontent > div {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
+  #dcontent .ccard {
+    width: min(200px, 60vw) !important;
+  }
+  #dcontent > div > div:last-child {
+    width: 100% !important;
+    max-width: 320px;
+  }
+  #dcontent p {
+    max-width: 100% !important;
+    font-size: .52rem !important;
+  }
+
+  /* ── Showcase ── */
+  .sc-profile { gap: 12px; padding: 14px; }
+  .sc-avatar { width: 52px; height: 52px; }
+  .sc-username { font-size: .9rem; }
+  .sc-stats-row { gap: 10px; }
+  .sc-stat span:first-child { font-size: .95rem; }
+  .sc-power-row { padding: 8px 12px; }
+  .sc-section-title { font-size: .55rem; }
+  .sc-divider { font-size: .5rem; }
+  .sc-search-row { gap: 8px; }
+  .sc-search-inp { font-size: .65rem; }
+  .sc-players-grid { grid-template-columns: 1fr; }
+
+  /* ── Leaderboard ── */
+  .lb-title { font-size: 1rem; }
+  .lb-row { padding: 10px 12px; gap: 10px; }
+  .lb-rank { min-width: 28px; font-size: .9rem; }
+  .lb-avatar { width: 36px; height: 36px; font-size: 1.1rem; }
+  .lb-name { font-size: .75rem; }
+  .lb-meta { font-size: .38rem; }
+  .lb-cards { display: none; }
+  .lb-power-val { font-size: .85rem; }
+  .lb-power-lbl { font-size: .32rem; }
+
+  /* ── Player profile screen ── */
+  .pp-topbar { padding: 0 16px; height: 52px; }
+  .pp-content { padding: 0 14px 48px; }
+  .pp-hero { height: 90px; }
+  .pp-identity { padding: 0 16px; margin-top: -28px; gap: 12px; }
+  .pp-avatar { width: 54px; height: 54px; font-size: 1.5rem; }
+  .pp-username { font-size: 1rem; }
+  .pp-body { padding: 12px 0 24px; }
+  .pp-stats { flex-wrap: wrap; }
+  .pp-stat { min-width: 60px; padding: 10px 6px; }
+  .pp-stat-val { font-size: .85rem; }
+  .pp-stat-lbl { font-size: .35rem; }
+  .pp-cards-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 8px; }
+
+  /* ── Pick overlay ── */
+  .pick-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 8px;
+    padding: 12px;
+  }
+  .pick-title { font-size: .7rem; }
+
+  /* ── Login ── */
+  .login-wrap { width: 95vw; }
+  .login-panel-left { display: none; }
+  .login-panel-right { width: 100%; padding: 24px 20px; }
+
+  /* ── Notify ── */
+  .notif {
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    white-space: nowrap;
+    font-size: .55rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* ── Header shrink more ── */
+  header { padding: 0 12px; gap: 8px; }
+  .logo { font-size: 1.05rem; }
+  /* Hide pack counters in header on tiny screens — shown in stats bar */
+  .header-center { display: none; }
+
+  /* ── Tabs even tighter ── */
+  .tab { padding: 0 10px; font-size: .45rem; letter-spacing: 1.5px; }
+  .tab-icon { display: none; }
+
+  /* ── Main ── */
+  .main { padding: 12px 10px 28px; }
+
+  /* ── Stats bar: 2 per row ── */
+  .stat { min-width: calc(50% - 1px); }
+
+  /* ── Collection: 3 columns ── */
+  .cgrid { grid-template-columns: repeat(3, 1fr); gap: 7px; }
+
+  /* ── OBO card bigger on small screens ── */
+  .obo-card-wrap .card { width: min(200px, 75vw) !important; }
+
+  /* ── Packs smaller ── */
+  .pack-wrap { transform: scale(0.75); transform-origin: top center; }
+  .packs-row { gap: 0; margin: -20px 0; }
+
+  /* ── Showcase slots 2 cols ── */
+  .sc-slots { grid-template-columns: repeat(3, 1fr) !important; }
+
+  /* ── LB rows compact ── */
+  .lb-row { padding: 8px 10px; gap: 8px; }
+  .lb-power { min-width: 52px; }
+
+  /* ── Detail: card smaller ── */
+  #dcontent .ccard { width: min(170px, 72vw) !important; }
+}
 </style>
 </head>
 <body>
@@ -4051,7 +4259,8 @@ function showDetail(card){
   }
 
   // Scale up text in the detail card (same as modal-card in showcase)
-  const detailCardStyle='width:280px;aspect-ratio:63/88;animation:dcEntry .45s cubic-bezier(.34,1.4,.64,1);flex-shrink:0;transform-style:preserve-3d;'+
+  const cardW=Math.min(280,window.innerWidth*0.55);
+  const detailCardStyle='width:'+cardW+'px;aspect-ratio:63/88;animation:dcEntry .45s cubic-bezier(.34,1.4,.64,1);flex-shrink:0;transform-style:preserve-3d;'+
     (card.url?'cursor:pointer':'cursor:default');
 
   document.getElementById('dcontent').innerHTML=`
