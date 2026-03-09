@@ -2029,6 +2029,86 @@ header::after{
   /* ── Detail: card smaller ── */
   #dcontent .ccard { width: min(170px, 72vw) !important; }
 }
+
+/* ══ FOOTER ══ */
+.site-footer {
+  position: relative; z-index: 10;
+  border-top: 1px solid rgba(255,255,255,.05);
+  background: rgba(6,6,14,.7);
+  backdrop-filter: blur(20px);
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.site-footer::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(252,211,77,.18) 25%,
+    rgba(167,139,250,.12) 55%,
+    rgba(56,189,248,.1) 75%,
+    transparent 100%);
+  pointer-events: none;
+}
+.footer-copy {
+  font-family: 'Cinzel', serif;
+  font-size: .42rem;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,.2);
+}
+.footer-copy strong { color: rgba(255,255,255,.32); font-weight: 600; }
+.footer-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.footer-meta-item {
+  font-family: 'Cinzel', serif;
+  font-size: .38rem;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,.18);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.footer-sep { color: rgba(255,255,255,.1); font-size: .5rem; }
+.footer-version {
+  font-family: 'Cinzel', serif;
+  font-size: .38rem;
+  letter-spacing: 2px;
+  color: rgba(252,211,77,.4);
+  padding: 2px 8px;
+  border-radius: 20px;
+  border: 1px solid rgba(252,211,77,.15);
+  background: rgba(252,211,77,.04);
+}
+.footer-wiki {
+  font-family: 'Cinzel', serif;
+  font-size: .38rem;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,.18);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color .2s;
+}
+.footer-wiki:hover { color: rgba(255,255,255,.4); }
+.footer-wiki-w {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: .48rem;
+  color: rgba(255,255,255,.28);
+}
+@media (max-width: 600px) {
+  .site-footer { padding: 12px 14px; justify-content: center; text-align: center; }
+  .footer-meta { justify-content: center; }
+  .footer-copy { width: 100%; text-align: center; }
+}
 </style>
 </head>
 <body>
@@ -4951,5 +5031,23 @@ document.getElementById('openModal').addEventListener('click',e=>{if(e.target===
 document.getElementById('detailModal').addEventListener('click',e=>{if(e.target===e.currentTarget)closeDetail();});
 init();
 </script>
+
+<footer class="site-footer">
+  <div class="footer-copy">
+    © 2026 <strong>WikiPacks</strong> · Open source · No ads · No pay-to-win
+  </div>
+  <div class="footer-meta">
+    <div class="footer-meta-item">⬡ Data stored locally</div>
+    <span class="footer-sep">·</span>
+    <div class="footer-meta-item">⚡ 10 packs / day</div>
+    <span class="footer-sep">·</span>
+    <a class="footer-wiki" href="https://en.wikipedia.org" target="_blank">
+      <span class="footer-wiki-w">W</span> en.wikipedia.org
+    </a>
+    <span class="footer-sep">·</span>
+    <div class="footer-version">v1.0.0</div>
+  </div>
+</footer>
+
 </body>
 </html>
