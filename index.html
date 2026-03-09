@@ -12,7 +12,7 @@
   --common:#90b8d4;--uncommon:#52d47a;--rare:#a78bfa;--epic:#fb923c;--legendary:#fcd34d;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;min-height:100vh;overflow-x:hidden;}
+body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;min-height:100vh;overflow-x:hidden;display:flex;flex-direction:column;}
 .bg-stars{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 15% 25%,rgba(167,139,250,.06) 0%,transparent 45%),radial-gradient(ellipse at 85% 75%,rgba(245,200,66,.05) 0%,transparent 45%);}
 .bg-grid{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.022;background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:60px 60px;}
 /* ══ HEADER + NAV ══ */
@@ -158,7 +158,8 @@ header::after{
   opacity:0;transition:opacity .2s;
 }
 .tab.active .tab-badge{opacity:1;}
-.main{position:relative;z-index:10;max-width:1300px;margin:0 auto;padding:32px 28px;}
+.main{position:relative;z-index:10;max-width:1300px;margin:0 auto;padding:32px 28px;width:100%;}
+#mainApp{flex:1;overflow-y:auto;overflow-x:hidden;}
 .stats-bar{
   display:flex;gap:0;flex-wrap:wrap;
   margin-bottom:32px;
@@ -2033,15 +2034,16 @@ header::after{
 /* ══ FOOTER ══ */
 .site-footer {
   position: relative; z-index: 10;
+  flex-shrink: 0;
   border-top: 1px solid rgba(255,255,255,.05);
-  background: rgba(6,6,14,.7);
+  background: rgba(6,6,14,.85);
   backdrop-filter: blur(20px);
-  padding: 14px 28px;
+  padding: 13px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 .site-footer::before {
   content: '';
@@ -2101,13 +2103,13 @@ header::after{
 .footer-wiki:hover { color: rgba(255,255,255,.4); }
 .footer-wiki-w {
   font-family: 'Cinzel Decorative', serif;
-  font-size: .48rem;
+  font-size: .46rem;
   color: rgba(255,255,255,.28);
 }
 @media (max-width: 600px) {
-  .site-footer { padding: 12px 14px; justify-content: center; text-align: center; }
-  .footer-meta { justify-content: center; }
+  .site-footer { padding: 10px 14px; justify-content: center; }
   .footer-copy { width: 100%; text-align: center; }
+  .footer-meta { justify-content: center; }
 }
 </style>
 </head>
