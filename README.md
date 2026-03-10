@@ -6,8 +6,6 @@ A browser card game where you collect cards based on Wikipedia articles. The rar
 
 **[▶ Play WikiPacks](https://usernameapetri.github.io/wikipacks/)**
 
-> Replace `usernameapetri` with your GitHub username after deploy.
-
 ## Features
 
 - 📦 Open Daily & Gold packs
