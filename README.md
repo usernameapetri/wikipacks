@@ -4,9 +4,9 @@ A browser card game where you collect cards based on Wikipedia articles. The rar
 
 ## 🎮 Play
 
-**[▶ Play WikiPacks](https://YOUR_USERNAME.github.io/wikipacks/)**
+**[▶ Play WikiPacks](https://usernameapetri.github.io/wikipacks/)**
 
-> Replace `YOUR_USERNAME` with your GitHub username after deploy.
+> Replace `usernameapetri` with your GitHub username after deploy.
 
 ## Features
 
@@ -25,21 +25,4 @@ A browser card game where you collect cards based on Wikipedia articles. The rar
 Power = log10(views) × 22 × rarityMult × gradeMult + rarityBonus
 Max = 1000
 ```
-
-## Deploy to GitHub Pages
-
-1. Create a new repo on GitHub (e.g. `wikipacks`)
-2. Push this folder:
-   ```bash
-   git init
-   git add .
-   git commit -m "initial"
-   git remote add origin https://github.com/YOUR_USERNAME/wikipacks.git
-   git push -u origin main
-   ```
-3. Go to repo **Settings → Pages → Source: main branch → Save**
-4. Your game is live at `https://YOUR_USERNAME.github.io/wikipacks/`
-
-## Local
-
 Open `index.html` directly in any browser — no server needed.
